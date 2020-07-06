@@ -3,6 +3,7 @@ one after the other
 another line
 
 
+this is a second paragraph
 
 
 here is a picture of my wonderful assignment
