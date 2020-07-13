@@ -1,14 +1,15 @@
+// Will be creating images with Following Names
 PImage spongeBob;
 PImage jellyFish;
 PImage jellyFish2;
 PImage jellyFish3;
 PImage bubbles;
 
-// angle for Spongebob's Eyes
+// Initial Angle for Spongebob's Eyes
 float angle = 90;
 
 
-/* Starting position of Jellyfish */
+/* Starting position of 3 Jellyfish */
 int jelX1 = 0;
 int jelY1= 0;
 
@@ -21,32 +22,31 @@ int jelY3= 20;
 //Used for Bubble Movement
 float bAngle = 0.05;
 
-
-
-
-
 void setup() {
+  //Canvas Size
   size(800, 600);
+  
+  //URL's of Images
   String sponge = "https://i.pinimg.com/originals/69/68/65/696865b0736fe48a7f9628d74fb0b46f.png";
   String jelly = "https://vignette.wikia.nocookie.net/nickelodeon/images/a/a5/Jellyfish_in_2018.png/";
+  
   // Load images from a web server
   spongeBob = loadImage(sponge, "png");
   jellyFish = loadImage(jelly, "png");
-  bubbles = loadImage("bubbles.png");
+  bubbles = loadImage("bubbles.png"); //this image was saved on Computer
 }
 
 
 void draw() {
+  //Reset Background each iteration
   background(140, 230, 245);
 
-
-
-  //Figure Bubbles Configuration
-  float x = 370 + sin(bAngle) * .05;
-  float y =  250 + cos(bAngle) * .05;
-  bAngle = bAngle + 0.5;
-  image(bubbles, x, y);
-  bubbles.resize(500, 250);
+  //Make Figure bubbles move in circular motion
+  float x = 370 + sin(bAngle) * .05;   
+  float y =  250 + cos(bAngle) * .05;    //combination sin and cos positions create circle
+  bAngle = bAngle + 0.5; 
+  image(bubbles, x, y);                  //load image according to position
+  bubbles.resize(500, 250);              //original image was too large, so I compressed it
 
 
   //Jellyfish Configuration
@@ -64,9 +64,9 @@ void draw() {
   jellyFish.resize(220, 250);
 
   //Small Bubble Movement
-  for (int i = 0; i < 9; i = i+1) {
+  for (int i = 0; i < 9; i = i+1) {            //Used for loop to create multiple bubbles at once
     fill(255, 255, 255, 150);
-    if (width*i % (i+1) == 0) { 
+    if (width*i % (i+1) == 0) {     
       stroke(255);
       circle(i*90, height- angle*2, 80);
       noStroke();
@@ -110,6 +110,8 @@ void draw() {
   circle(0, 12, 15);
   resetMatrix();
 
+
+//restart motion once near end of screen
   if (angle >= 245) {
     angle = 90;
     jelX1 = 0;
@@ -120,6 +122,5 @@ void draw() {
   jelX1 += 1;
   jelX2 += 1;
   jelX3 += 1;
-
   angle = angle + .25;
 }
