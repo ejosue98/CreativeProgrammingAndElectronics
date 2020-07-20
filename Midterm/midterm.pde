@@ -55,7 +55,7 @@ void setup() {
 // there are multiple screens to display - state defines which to load (display according to state)
 void draw () {
 
-  if ( state == -1 ) { //Game State
+  if ( state == -1 ) { //load State
     load();
   } else if ( state == 1 ) { //Game State
     draw_playing();
