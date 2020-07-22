@@ -1,3 +1,4 @@
-![](Digital_Analog.jpg)
+![](Digital_Analog.jpg) ![](Schematic.jpg)
 
-![](Schematic.jpg)
+
+
