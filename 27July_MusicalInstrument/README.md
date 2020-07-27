@@ -1,1 +1,3 @@
+![](instrument.jpg)
+![](electronics.jpg)
 
