@@ -24,7 +24,7 @@ The project is powered by 2 microcontrollers, Arduino uno and an OpenMV H7, whic
 
 An additional reset button was implemented within the project, which would be placed away from the entry in a real life scenario. This button resets the connection between both microcontrollers and re-initiates the system for its next use.
 
-Difficulties: 
+**Difficulties:** 
 
 *States*
 Given the how logic heavy this project is based, I found it a fun challenge deciphering how many different stages the system should have and the variables each state should depend on. I therefore found it easier to first solve the issue with the UART communication interface between both microcontrollers. From the data collected, I would then decide the following steps to take. For instance, my first stage was a detection stage. At all times, the OpenMV webcam would be looking for humans and communicate with the arduino. Thus, I needed to find a way to store the information exchange between both devices and know when a person was detected.
@@ -48,7 +48,6 @@ The last issue I often faced during my project was the large interruptions of co
 **Schematic and Close Ups**
 ![](schematic.png)
 ![](closeUp2.jpg)
-![](schematic.png)
 ![](closeUp1.jpg)
 
 
